@@ -6,6 +6,7 @@ class Post(models.Model):
   content = models.TextField()   #ブログ記事の内容：テキストの入力
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
+  is_published = models.BooleanField(default=False) #False=非公開
   
   def __str__(self):
     return self.title
