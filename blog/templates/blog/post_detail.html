@@ -4,7 +4,10 @@
   {% if not post.is_published%}
         <span class="badge bg-danger">下書き</span>
   {% endif %}
-  <h1>{{ post.title }}</h1
+  <h1>{{ post.title }}</h1>
+  {% if post.image %}
+  <img src="{{ post.image.url}}" class="mb-3" width="100%" alt="{{post.title}}"
+{% endif %}
   <p>更新日：{{ post.updated_at | date }}</p>
   <hr>
   <p>{{post.content}}</p>
